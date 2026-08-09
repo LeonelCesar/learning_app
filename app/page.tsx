@@ -12,6 +12,7 @@ export default function App() {
 
           <p className="mt-1 text-sm text-slate-500">
             Componente reutilizável para formulários.
+            Dentro do componente, podes adicionar ícones, mensagens de erro, textos de ajuda e muito mais.
           </p>
         </header>
 
