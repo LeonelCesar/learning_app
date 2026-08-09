@@ -3,6 +3,9 @@
 import { Mail, Search, User } from "lucide-react";
 import { Input } from "./Components/ui/Input";
 
+import type { ButtonProps } from "./Components/button.types";
+import { Button } from "./Components/ui/Button";
+
 export default function App() {
   return (
     <main className="min-h-screen bg-slate-100 p-6">
@@ -22,7 +25,10 @@ export default function App() {
           starIcon={<User />}
           helperText="Introduz o teu nome completo."
           autoComplete="name"
-          required errorMessage={""} fullWidth={false}        />
+          required
+          errorMessage={""}
+          fullWidth={false}
+        />
 
         <Input
           label="Email"
@@ -30,7 +36,10 @@ export default function App() {
           type="email"
           placeholder="leonel@example.com"
           starIcon={<Mail />}
-          autoComplete="email" errorMessage={""} fullWidth={false}        />
+          autoComplete="email"
+          errorMessage={""}
+          fullWidth={false}
+        />
 
         <Input
           label="Pesquisar"
@@ -38,27 +47,43 @@ export default function App() {
           type="search"
           placeholder="Pesquisar pacientes..."
           starIcon={<Search />}
-          inputSize="lg" errorMessage={""} fullWidth={false}        />
+          inputSize="lg"
+          errorMessage={""}
+          fullWidth={false}
+        />
 
         <Input
           label="Email inválido"
           name="invalidEmail"
           type="email"
           defaultValue="email-incorreto"
-          errorMessage="Introduz um endereço de email válido." fullWidth={false}        />
+          errorMessage="Introduz um endereço de email válido."
+          fullWidth={false}
+        />
 
         <Input
           label="Campo validado"
           name="validatedField"
           defaultValue="Valor correto"
-          variant="success" errorMessage={""} fullWidth={false}        />
+          variant="success"
+          errorMessage={""}
+          fullWidth={false}
+        />
 
         <Input
           label="Campo desativado"
           name="disabledField"
           defaultValue="Não editável"
-          disabled errorMessage={""} fullWidth={false}        />
+          disabled
+          errorMessage={""}
+          fullWidth={false}
+        />
       </div>
+
+      <Button variant="secondary">Cancelar</Button>
+      <Button variant="danger">Eliminar</Button>
+      <Button variant="ghost">Ver detalhes</Button>
+      <Button loading>A guardar...</Button>
     </main>
   );
 }
