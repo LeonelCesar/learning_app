@@ -128,8 +128,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
               "transition-colors duration-150",
               "focus:ring-4",
               "disabled:cursor-not-allowed",
-              "disabled:bg-slate-100",
-              "disabled:text-slate-500",
+              "disabled:bg-slate-300",
+              "disabled:text-slate-600",
               "disabled:opacity-80",
               inputSizeStyles[inputSize],
               inputVariantStyles[resolvedVariant],
@@ -160,7 +160,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             {errorMessage}
           </p>
         ) : helperText ? (
-          <p id={helperTextId} className="text-sm text-slate-500">
+          <p id={helperTextId} className="text-sm text-slate-700">
             {helperText}
           </p>
         ) : null}
