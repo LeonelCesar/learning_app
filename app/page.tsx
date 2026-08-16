@@ -5,6 +5,7 @@ import { Input } from "./Components/ui/Input";
 
 import type { ButtonProps } from "./Components/button.types";
 import { Button } from "./Components/ui/Button";
+import { UserList } from "./Components/UserList";
 
 export default function App() {
   return (
@@ -84,6 +85,8 @@ export default function App() {
       <Button variant="danger">Eliminar</Button>
       <Button variant="ghost">Ver detalhes</Button>
       <Button loading>A guardar...</Button>
+
+      <UserList />
     </main>
   );
 }
