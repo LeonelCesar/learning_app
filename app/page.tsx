@@ -1,4 +1,4 @@
-"use client";
+/* "use client";
 
 import { Mail, Search, User } from "lucide-react";
 import { Input } from "./Components/ui/Input";
@@ -88,6 +88,64 @@ export default function App() {
       <Button loading>A guardar...</Button>
 
       <UserList />
+    </main>
+  );
+}
+ */
+
+
+import {
+  CartSummary,
+  ProductCard,
+} from "./Components/cart";
+
+import type { Product } from "../app/src/types/cart.types";
+
+const products: Product[] = [
+  {
+    id: "product-1",
+    name: "Mechanical Keyboard",
+    price: 89.9,
+  },
+  {
+    id: "product-2",
+    name: "Wireless Mouse",
+    price: 49.9,
+  },
+  {
+    id: "product-3",
+    name: "USB-C Hub",
+    price: 69.9,
+  },
+];
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-slate-100 p-6 sm:p-8">
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1fr_360px]">
+        <section>
+          <header className="mb-6">
+            <h1 className="text-2xl font-bold text-slate-900">
+              Products
+            </h1>
+
+            <p className="mt-1 text-slate-500">
+              Select products to add to your cart.
+            </p>
+          </header>
+
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+              />
+            ))}
+          </div>
+        </section>
+
+        <CartSummary />
+      </div>
     </main>
   );
 }
