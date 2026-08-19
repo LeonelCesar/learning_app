@@ -13,7 +13,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="flex flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
       <div className="flex-1">
-        <h2>{product.name}</h2>
+        <h2 className="text-slate-500">{product.name}</h2>
 
         <p className="mt-2 text-lg font-bold text-blue-600">
           {product.price.toLocaleString("pt-PT", {
