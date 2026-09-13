@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Modal } from "./Components/modal";
 import { Avatar } from "./Components/avatar";
 
+import { SearchableSelect } from "./Components/SearchableSelect";
+
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,30 +48,60 @@ export default function Home() {
         </p>
       </Modal>
 
-       <div className="flex flex-wrap items-center gap-6">
+      <div className="flex flex-wrap items-center gap-6">
         <Avatar
           name="Leonel César"
           src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
           size="lg"
           status="online"
-          showStatus alt={""}        />
+          showStatus
+          alt={""}
+        />
 
         <Avatar
           name="Ana Silva"
           size="md"
           status="busy"
-          showStatus src={""} alt={""}        />
+          showStatus
+          src={""}
+          alt={""}
+        />
 
         <Avatar
           name="Carlos Mendes"
           size="xl"
           status="away"
-          showStatus src={""} alt={""}        />
+          showStatus
+          src={""}
+          alt={""}
+        />
 
         <Avatar
           name="Maria Oliveira"
-          size="sm" src={""} alt={""} status={"online"}        />
+          size="sm"
+          src={""}
+          alt={""}
+          status={"online"}
+        />
       </div>
+
+      <SearchableSelect
+        label="Select an option"
+        placeholder="Choose an option"
+        searchPlaceholder="Search..."
+        options={[
+          { value: "option1", label: "Option 1" },
+          { value: "option2", label: "Option 2" },
+          { value: "option3", label: "Option 3" },
+        ]}
+        value={undefined}
+        onChange={(value, option) => {
+          console.log("value:", value);
+          console.log("option:", option);
+        }}
+        getOptionLabel={(option) => option.label}
+        getOptionValue={(option) => option.value}
+      />
     </main>
   );
 }
