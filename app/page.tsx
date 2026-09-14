@@ -6,6 +6,8 @@ import { Avatar } from "./Components/avatar";
 
 import { SearchableSelect } from "./Components/SearchableSelect";
 
+import Footer from "./Components/footer/Footer";
+
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -101,6 +103,13 @@ export default function Home() {
         }}
         getOptionLabel={(option) => option.label}
         getOptionValue={(option) => option.value}
+      />
+
+      <Footer
+        name="Leonel César"
+        email="leonel@example.com"
+        dateFlowId="FLOW-2026-001"
+        age={24}
       />
     </main>
   );

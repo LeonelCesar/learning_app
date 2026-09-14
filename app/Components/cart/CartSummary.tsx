@@ -4,17 +4,11 @@ import { useCartStore } from "../../src/stores/cart.store";
 
 export function CartSummary() {
   const items = useCartStore((state) => state.items);
-
   const removeItem = useCartStore((state) => state.removeItem);
-
   const increaseQuantity = useCartStore((state) => state.increaseQuantity);
-
   const decreaseQuantity = useCartStore((state) => state.decreaseQuantity);
-
   const clearCart = useCartStore((state) => state.clearCart);
-
   const totalItems = items.reduce((total, item) => total + item.quantity, 0);
-
   const totalPrice = items.reduce(
     (total, item) => total + item.price * item.quantity,
     0,
